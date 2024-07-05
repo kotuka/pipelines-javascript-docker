@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: kotukapipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kotukapipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: kotukapipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: kotukapipelinesjavascriptdocker 
+          image: acrlearning001701.azurecr.io/kotukapipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
